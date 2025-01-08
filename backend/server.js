@@ -19,6 +19,9 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 // Routes
 const reservationRoutes = require('./routes/reservations');
 app.use('/api/reservations', reservationRoutes);
+app.get('/', (req,res) => {
+    res.send('Test');
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
